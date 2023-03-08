@@ -16,7 +16,16 @@ Routing is het proces van het doorsturen van gegevens vanaf de bron naar de best
 
 Het IP-protocol (Internet Protocol) is een netwerkprotocol dat wordt gebruikt om gegevens te verzenden over het internet en andere computernetwerken. Het maakt deel uit van de netwerklaag van het TCP/IP-model en is verantwoordelijk voor het routeren van gegevenspakketten van de bron naar de bestemming.
 Wanneer gegevens worden verzonden vanaf een bronapparaat naar een bestemmingsapparaat via het internet, worden de gegevens opgesplitst in kleine pakketjes. Elk pakketje bevat een deel van de gegevens, samen met het IP-adres van de bron en het IP-adres van de bestemming. Het pakketje wordt vervolgens verzonden via het netwerk naar de bestemming.
-Het IP-protocol heeft twee belangrijke taken: adreszuivering en routering. Adreszuivering is het proces van het toevoegen van een IP-adres aan elk pakketje om het te identificeren en te verzenden naar de juiste bestemming. Routering is het proces van het bepalen van de beste route voor het pakketje om de bestemming te bereiken, op basis van de beschikbare netwerkverbindingen en routers.
+
+Het IP-protocol heeft twee belangrijke taken: adreszuivering en routering. # adreszuivering
+#### adreszuivering
+Adreszuivering is het proces van pakketjes maken, en het toevoegen van een IP-adres aan elk pakketje om het te identificeren en te verzenden naar de juiste bestemming. 
+
+#### Routering
+Routering is het proces van het bepalen van de beste route voor het pakketje om de bestemming te bereiken, op basis van de beschikbare netwerkverbindingen en routers.
+
+
+#### best-effort principe
 Het IP-protocol maakt gebruik van het beste effort-principe, wat betekent dat het pakketje wordt verzonden zonder garantie van levering of kwaliteit van de verbinding. Het kan dus voorkomen dat pakketjes verloren gaan of vertraging oplopen in het netwerk. Dit wordt opgevangen door hogere lagen van het TCP/IP-model, zoals TCP (Transmission Control Protocol), die de betrouwbaarheid van de verbinding garanderen.
 
 Kortom, het IP-protocol is de basis van communicatie over het internet en andere computernetwerken. Het verzendt gegevenspakketjes van de bron naar de bestemming door middel van adreszuivering en routering. Het is een belangrijk onderdeel van het TCP/IP-model en wordt gebruikt in combinatie met andere protocollen om betrouwbare communicatie te garanderen.
