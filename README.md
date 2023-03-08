@@ -51,7 +51,9 @@ De Client applicatie is vaak het front-end development onderdeel van een applica
 
 ## Netwerkkaart 
 ###	Wat is een netwerkkaart / hoe wordt deze geïdentificeerd?
-Sleutelboek computernetwerken p 54
+
+Een netwerkkaart is een specifieke hardwarecomponent die wordt gebruikt om een apparaat aan te sluiten op een netwerk, meestal via een Ethernet-kabel of draadloze verbinding. Een netwerkkaart kan als interface fungeren tussen het apparaat en het netwerk. Elke netwerkkaart heeft zijn eigen mac-adres.
+Een computer kan meerder netwerkkaarten hebben, en dus ook meerdere mac-adressen.
 
 #### Is een netwerkkaart en een interface hetzelfde?
 Nee, een interface en een netwerkkaart zijn niet hetzelfde, hoewel ze soms wel in verband worden gebracht met elkaar.
@@ -69,7 +71,9 @@ Sleutelboek computernetwerken p 55 ev
 4.1	Kenmerken
 4.2	Coaxiale kabel
 4.3	Twisted pair
-Je kan zelf een netwerkkabel maken
+
+Je kan zelf een netwerkkabel maken.
+
 4.4	Glasvezel
 4.5	Powerline
 4.6	WiFI
@@ -79,7 +83,7 @@ Je kan zelf een netwerkkabel maken
 
 ### EletroMagnetische Interferentie (EMI)
 
-Elektromagnetische interferentie (EMI) is een veelvoorkomend probleem dat kan optreden op netwerkkabels, zoals twisted pair en coax. EMI wordt veroorzaakt door elektromagnetische velden die worden opgewekt door andere elektronische apparaten in de buurt, zoals elektrische motoren, verlichting, radiosignalen en mobiele telefoons. Deze elektromagnetische velden kunnen de signaaloverdracht op de kabels verstoren en zo de prestaties van het netwerk beïnvloeden.
+Elektromagnetische interferentie (EMI) is een veelvoorkomend probleem dat kan optreden op netwerkkabels, zoals twisted pair en coax. Dit zijn de netwerkkabels die signalen eletrisch doorsturen. EMI wordt veroorzaakt door elektromagnetische velden die worden opgewekt door andere elektronische apparaten in de buurt, zoals elektrische motoren, verlichting, radiosignalen en mobiele telefoons. Deze elektromagnetische velden kunnen de signaaloverdracht op de kabels verstoren en zo de prestaties van het netwerk beïnvloeden.
 Twisted pair-kabels hebben het voordeel dat ze een natuurlijke afscherming tegen EMI hebben door hun draaiingen. Hoe meer de kabel is gedraaid, hoe minder last er is van EMI. 
 Coaxkabels hebben daarentegen een speciale opbouw die de interferentie van elektromagnetische velden vermindert. Ze hebben een centrale geleider (die zorgt voor de gegevensoverdracht) die wordt omgeven door een isolerende laag en een gevlochten afscherming van koperdraden, die voorkomt dat externe elektromagnetische velden doordringen tot de centrale geleider.
 Oorzaken van EMI:
@@ -98,7 +102,8 @@ Om EMI op netwerkkabels te verminderen, kunnen de volgende maatregelen worden ge
 •	Vermijd interferentiebronnen: Plaats het netwerk zo ver mogelijk weg van bronnen van EMI, zoals elektrische apparaten.
 •	Gebruik repeaters: Gebruik repeaters om het signaal te versterken en de afstand tussen apparaten te vergroten.
 Door deze maatregelen te nemen, kan de impact van EMI op netwerkkabels worden verminderd en kan de prestatie van het netwerk worden verbeterd.
-6	Netwerktopologieën
+
+## Netwerktopologieën
 Sleutelboek computernetwerken p 28-30.
 
 ###	Collision domain
