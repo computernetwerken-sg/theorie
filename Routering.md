@@ -42,11 +42,11 @@ Er zijn twee soorten poorten: bekende poorten en dynamische poorten. Bekende poo
 
 Hier zijn enkele veelgebruikte poorten en hun functies:
 
-Poort 80: HTTP (Hypertext Transfer Protocol) - gebruikt voor webbrowsers om webpagina's op te halen
-Poort 443: HTTPS (Hypertext Transfer Protocol Secure) - gebruikt voor veilige webpagina's met versleutelde gegevens
-Poort 25: SMTP (Simple Mail Transfer Protocol) - gebruikt voor het verzenden van e-mail
-Poort 110: POP3 (Post Office Protocol version 3) - gebruikt voor het ophalen van e-mail
-Poort 143: IMAP (Internet Message Access Protocol) - gebruikt voor het ophalen van e-mail op een server
+* Poort 80: HTTP (Hypertext Transfer Protocol) - gebruikt voor webbrowsers om webpagina's op te halen
+* Poort 443: HTTPS (Hypertext Transfer Protocol Secure) - gebruikt voor veilige webpagina's met versleutelde gegevens
+* Poort 25: SMTP (Simple Mail Transfer Protocol) - gebruikt voor het verzenden van e-mail
+* Poort 110: POP3 (Post Office Protocol version 3) - gebruikt voor het ophalen van e-mail
+* Poort 143: IMAP (Internet Message Access Protocol) - gebruikt voor het ophalen van e-mail op een server
 
 ### Werking
 Om pakketten te versturen en te ontvangen, is het belangrijk om het IP-adres van de bestemming te kennen. Een IP-adres is een uniek identificatienummer dat aan elke computer of apparaat is toegewezen dat is aangesloten op een netwerk. Het IP-adres vertelt het netwerk waar het pakket naartoe moet worden gestuurd. Het IP-adres is vergelijkbaar met het adres op een enveloppe waarmee je een brief naar de juiste persoon op het juiste adres stuurt.
@@ -55,19 +55,10 @@ Naast het IP-adres is ook het poortnummer belangrijk om pakketten te versturen e
 
 Wanneer een apparaat een pakket verzendt,UDP en TCP zijn beide protocollen die worden gebruikt voor de verzending van gegevens over een netwerk, maar er zijn belangrijke verschillen tussen de twee protocollen.
 
-Het belangrijkste verschil tussen UDP en TCP is dat UDP een verbindingsloos protocol is, terwijl TCP een verbindingsgeoriënteerd protocol is. Dit betekent dat UDP geen verbinding opzet tussen de zender en de ontvanger, terwijl TCP dat wel doet. Bij UDP worden gegevens gewoon verzonden naar de ontvanger zonder dat er een bevestiging wordt ontvangen. Dit maakt UDP snel, maar minder betrouwbaar, omdat er geen garantie is dat de gegevens aankomen en in de juiste volgorde worden ontvangen. UDP is daarom geschikt voor toepassingen waar snelheid belangrijker is dan betrouwbaarheid, zoals online gaming of streaming van video.
-
-TCP, aan de andere kant, zorgt voor een betrouwbare verbinding tussen de zender en de ontvanger. Wanneer gegevens worden verzonden via TCP, wordt er een verbinding opgezet tussen de zender en de ontvanger voordat de gegevens worden verzonden. Dit betekent dat er een bevestiging wordt ontvangen dat de gegevens zijn aangekomen en in de juiste volgorde zijn ontvangen. TCP is daarom geschikt voor toepassingen waar betrouwbaarheid belangrijker is dan snelheid, zoals het downloaden van bestanden of het versturen van e-mails.
-
-Een ander verschil tussen UDP en TCP is dat TCP meer overhead heeft dan UDP. Dit komt doordat TCP meer gegevens gebruikt om de verbinding op te zetten en te onderhouden. Hierdoor is TCP langzamer dan UDP en is het minder geschikt voor toepassingen waar snelheid van belang is.
-
-Kortom, UDP en TCP zijn beide protocollen voor de verzending van gegevens over een netwerk, maar ze verschillen in snelheid, betrouwbaarheid en overhead. UDP is snel, maar minder betrouwbaar, terwijl TCP betrouwbaar is, maar minder snel en heeft meer overhead. De keuze tussen UDP en TCP hangt af van de specifieke toepassing en de prioriteit van snelheid versus betrouwbaarheid. wordt het pakket geleverd aan de juiste poort op de computer van de bestemming. De toepassing die de poort gebruikt, kan dan het pakket lezen en erop reageren. Als er geen poortnummer zou zijn, zou de computer van de bestemming niet weten welke toepassing het pakket moet ontvangen en zou het pakket verloren gaan.
-
-Kortom, zowel het IP-adres als het poortnummer zijn belangrijk om pakketten te versturen en te ontvangen. Het IP-adres vertelt het netwerk waar het pakket naartoe moet worden gestuurd en het poortnummer vertelt de computer van de bestemming welke toepassing het pakket moet ontvangen. Het begrijpen van deze concepten is cruciaal voor netwerkbeheerders en anderen die werken met netwerkcommunicatie.
 
 ### UDP
-UDP is een variant van TCP, werkt net als TCP met poorten, en ook met het IP protocol. Er zijn echter enkele belangrijke verschillen:
-UDP en TCP zijn beide protocollen die worden gebruikt voor de verzending van gegevens over een netwerk, maar er zijn belangrijke verschillen tussen de twee protocollen.
+
+UDP is een variant van TCP, wordt ook gebruikt voor de verzending van gegevens over een netwerk, werkt net als TCP met poortnummers, en ook met het IP protocol. Er zijn echter enkele belangrijke verschillen:
 
 Het belangrijkste verschil tussen UDP en TCP is dat UDP een verbindingsloos protocol is, terwijl TCP een verbindingsgeoriënteerd protocol is. Dit betekent dat UDP geen verbinding opzet tussen de zender en de ontvanger, terwijl TCP dat wel doet. Bij UDP worden gegevens gewoon verzonden naar de ontvanger zonder dat er een bevestiging wordt ontvangen. Dit maakt UDP snel, maar minder betrouwbaar, omdat er geen garantie is dat de gegevens aankomen en in de juiste volgorde worden ontvangen. UDP is daarom geschikt voor toepassingen waar snelheid belangrijker is dan betrouwbaarheid, zoals online gaming of streaming van video.
 
@@ -76,6 +67,29 @@ TCP, aan de andere kant, zorgt voor een betrouwbare verbinding tussen de zender 
 Een ander verschil tussen UDP en TCP is dat TCP meer overhead heeft dan UDP. Dit komt doordat TCP meer gegevens gebruikt om de verbinding op te zetten en te onderhouden. Hierdoor is TCP langzamer dan UDP en is het minder geschikt voor toepassingen waar snelheid van belang is.
 
 Kortom, UDP en TCP zijn beide protocollen voor de verzending van gegevens over een netwerk, maar ze verschillen in snelheid, betrouwbaarheid en overhead. UDP is snel, maar minder betrouwbaar, terwijl TCP betrouwbaar is, maar minder snel en heeft meer overhead. De keuze tussen UDP en TCP hangt af van de specifieke toepassing en de prioriteit van snelheid versus betrouwbaarheid.
+
+
+Hieronder staan enkele voorbeelden van TCP- en UDP-toepassingen:
+
+#### TCP:
+
+* HTTP (Hypertext Transfer Protocol): wordt gebruikt voor het verzenden van webpagina's via internet
+* FTP (File Transfer Protocol): wordt gebruikt voor het verzenden van bestanden over internet
+* SMTP (Simple Mail Transfer Protocol): wordt gebruikt voor het verzenden van e-mails
+* SSH (Secure Shell): wordt gebruikt voor beveiligde toegang tot een server
+* Telnet: wordt gebruikt voor op afstand inloggen op een server
+
+#### UDP:
+
+* DNS (Domain Name System): wordt gebruikt voor het vertalen van domeinnamen naar IP-adressen
+* DHCP (Dynamic Host Configuration Protocol): wordt gebruikt voor het toewijzen van IP-adressen aan apparaten in een netwerk
+* VoIP (Voice over IP): wordt gebruikt voor het verzenden van spraak over internet
+* Video streaming: wordt gebruikt voor het streamen van video's over internet, zoals YouTube of Netflix
+* Online gaming: wordt gebruikt voor real-time online gaming, waar snelheid belangrijker is dan betrouwbaarheid.
+
+Dit zijn slechts enkele voorbeelden van de vele toepassingen van TCP en UDP. Welk protocol het meest geschikt is, hangt af van de specifieke toepassing en de prioriteit van snelheid versus betrouwbaarheid.
+
+
 ##	Mac-adressen en ARP
 
 De verbindingslaag, ook wel bekend als de data link laag, is de laag in het netwerkprotocolmodel die verantwoordelijk is voor het overbrengen van gegevens tussen aangrenzende netwerken, zoals tussen een computer en een switch op een Ethernet-netwerk.
