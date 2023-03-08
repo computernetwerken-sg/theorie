@@ -119,7 +119,7 @@ Indien meerdere toestellen op hetzelfde moment een signaal op hetzelfde medium p
 Hoe meer toestellen aangesloten worden op hetzelfde medium, hoe groter de kans op een botsing - collision. 
 Broadcast domain is dus dat deel van een netwerk, van alle toestellen die op hetzelfde medium aangesloten zijn, en die kunnen botsen. Daarvoor worden in een sternetwerk tegenwoordig altijd switches gebruikt (ipv hubs), zo is er slechts een kleine kans op botsing. Bij busnetwerken was dit ook een probleem, maar deze topologie wordt tegenwoordig bijna niet meer gebruikt.
 
-Bij draadloze netwerken is dit wel een belangrijke factor: hoe meer computers aangesloten op een netwerk, hoe groter de kans op een botsing, hoe meer berichten opnieuw verstuurd moeten worden, en hoe trager het netwerk dus werkt.
+Bij draadloze netwerken is dit wel een belangrijke factor: hoe meer computers aangesloten op een wifi-netwerk, hoe groter de kans op een botsing, hoe meer berichten opnieuw verstuurd moeten worden, en hoe trager het netwerk dus werkt.
 
 ###	Broadcast domain
 Een broadcast domain bevat alle computers in hetzelfde netwerk. Alle computers aangesloten op dezelfde switch behoren dus tot hetzelfde broadcast domain. 
