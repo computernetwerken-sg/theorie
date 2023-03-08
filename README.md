@@ -83,24 +83,29 @@ Je kan zelf een netwerkkabel maken.
 
 ### EletroMagnetische Interferentie (EMI)
 
-Elektromagnetische interferentie (EMI) is een veelvoorkomend probleem dat kan optreden op netwerkkabels, zoals twisted pair en coax. Dit zijn de netwerkkabels die signalen eletrisch doorsturen. EMI wordt veroorzaakt door elektromagnetische velden die worden opgewekt door andere elektronische apparaten in de buurt, zoals elektrische motoren, verlichting, radiosignalen en mobiele telefoons. Deze elektromagnetische velden kunnen de signaaloverdracht op de kabels verstoren en zo de prestaties van het netwerk beïnvloeden.
+Elektromagnetische interferentie (EMI) is een veelvoorkomend probleem dat kan optreden op netwerkkabels, zoals twisted pair en coax. Dit zijn de netwerkkabels die signalen elektrisch doorsturen. EMI wordt veroorzaakt door elektromagnetische velden die worden opgewekt door andere elektronische apparaten in de buurt, zoals elektrische motoren, verlichting, radiosignalen en mobiele telefoons. Deze elektromagnetische velden kunnen de signaaloverdracht op de kabels verstoren en zo de prestaties van het netwerk beïnvloeden.
+
 Twisted pair-kabels hebben het voordeel dat ze een natuurlijke afscherming tegen EMI hebben door hun draaiingen. Hoe meer de kabel is gedraaid, hoe minder last er is van EMI. 
+
 Coaxkabels hebben daarentegen een speciale opbouw die de interferentie van elektromagnetische velden vermindert. Ze hebben een centrale geleider (die zorgt voor de gegevensoverdracht) die wordt omgeven door een isolerende laag en een gevlochten afscherming van koperdraden, die voorkomt dat externe elektromagnetische velden doordringen tot de centrale geleider.
+
+Glasvezelkabels hebben geen last van EMI, omdat de signalen optisch, en niet elektrisch, verstuurd worden.
+
 Oorzaken van EMI:
-•	Elektrische apparaten: Elektrische apparaten, zoals motoren en verlichting, genereren elektromagnetische velden die kunnen interfereren met de signalen op de netwerkkabels.
-•	Radiosignalen: Radiosignalen, zoals die van mobiele telefoons en radio- en tv-zenders, kunnen ook EMI veroorzaken.
-•	Slecht ontworpen apparatuur: Slecht ontworpen apparatuur kan gevoeliger zijn voor EMI en kan het probleem verergeren.
+*	Elektrische apparaten: Elektrische apparaten, zoals motoren en verlichting, genereren elektromagnetische velden die kunnen interfereren met de signalen op de netwerkkabels.
+*	Radiosignalen: Radiosignalen, zoals die van mobiele telefoons en radio- en tv-zenders, kunnen ook EMI veroorzaken.
+*	Slecht ontworpen apparatuur: Slecht ontworpen apparatuur kan gevoeliger zijn voor EMI en kan het probleem verergeren.
 
 Gevolgen van EMI:
-•	Vermindering van signaalkwaliteit: EMI kan de kwaliteit van het signaal op de kabel verminderen, wat kan leiden tot vertragingen en verminderde prestaties van het netwerk.
-•	Verlies van gegevens: Bij hoge niveaus van EMI kunnen gegevens op de kabel verloren gaan of beschadigd raken, waardoor ze niet goed worden ontvangen.
-•	Verminderde snelheid: EMI kan de snelheid van het netwerk verminderen, wat kan leiden tot lagere doorvoersnelheden en een slechte gebruikerservaring.
+*	Vermindering van signaalkwaliteit: EMI kan de kwaliteit van het signaal op de kabel verminderen, wat kan leiden tot vertragingen en verminderde prestaties van het netwerk.
+*	Verlies van gegevens: Bij hoge niveaus van EMI kunnen gegevens op de kabel verloren gaan of beschadigd raken, waardoor ze niet goed worden ontvangen.
+*	Verminderde snelheid: EMI kan de snelheid van het netwerk verminderen, wat kan leiden tot lagere doorvoersnelheden en een slechte gebruikerservaring.
 
 Om EMI op netwerkkabels te verminderen, kunnen de volgende maatregelen worden genomen:
-•	Kies een goed afgeschermde kabel: Kies kabels met een goede afscherming om de interferentie van elektromagnetische velden te verminderen.
-•	Gebruik afgeschermde connectoren: Zorg ervoor dat de connectoren van de kabel ook afgeschermd zijn om EMI te verminderen.
-•	Vermijd interferentiebronnen: Plaats het netwerk zo ver mogelijk weg van bronnen van EMI, zoals elektrische apparaten.
-•	Gebruik repeaters: Gebruik repeaters om het signaal te versterken en de afstand tussen apparaten te vergroten.
+*	Kies een goed afgeschermde kabel: Kies kabels met een goede afscherming om de interferentie van elektromagnetische velden te verminderen.
+*	Gebruik afgeschermde connectoren: Zorg ervoor dat de connectoren van de kabel ook afgeschermd zijn om EMI te verminderen.
+*	Vermijd interferentiebronnen: Plaats het netwerk zo ver mogelijk weg van bronnen van EMI, zoals elektrische apparaten.
+*	Gebruik repeaters: Gebruik repeaters om het signaal te versterken en de afstand tussen apparaten te vergroten.
 Door deze maatregelen te nemen, kan de impact van EMI op netwerkkabels worden verminderd en kan de prestatie van het netwerk worden verbeterd.
 
 ## Netwerktopologieën
@@ -108,9 +113,12 @@ Sleutelboek computernetwerken p 28-30.
 
 ###	Collision domain
 
-Een bepaald transportmedium kan slechts 1 signaal per keer transporteren. Indien meerdere toestellen op hetzelfde moment een signaal op hetzelfde medium plaatsen, worden beide signalen onbruikbaar, en moeten ze opnieuw verstuurd worden.
+Een bepaald transportmedium kan slechts 1 signaal per keer transporteren. 
+
+Indien meerdere toestellen op hetzelfde moment een signaal op hetzelfde medium plaatsen, worden beide signalen onbruikbaar, en moeten ze opnieuw verstuurd worden.
 Hoe meer toestellen aangesloten worden op hetzelfde medium, hoe groter de kans op een botsing - collision. 
-Broadcast domain is dus dat deel van een netwerk, van alle toestellen die op hetzelfde medium aangesloten zijn, en die kunnen botsen. Daarvoor worden in een sternetwerk tegenwoordig altijd switches gebruikt (ipv hubs), zo is er slechts een kleine kans op botsing.
+Broadcast domain is dus dat deel van een netwerk, van alle toestellen die op hetzelfde medium aangesloten zijn, en die kunnen botsen. Daarvoor worden in een sternetwerk tegenwoordig altijd switches gebruikt (ipv hubs), zo is er slechts een kleine kans op botsing. Bij busnetwerken was dit ook een probleem, maar deze topologie wordt tegenwoordig bijna niet meer gebruikt.
+
 Bij draadloze netwerken is dit wel een belangrijke factor: hoe meer computers aangesloten op een netwerk, hoe groter de kans op een botsing, hoe meer berichten opnieuw verstuurd moeten worden, en hoe trager het netwerk dus werkt.
 
 ###	Broadcast domain
