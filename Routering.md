@@ -17,16 +17,16 @@ Routing is het proces van het doorsturen van gegevens vanaf de bron naar de best
 Het IP-protocol (Internet Protocol) is een netwerkprotocol dat wordt gebruikt om gegevens te verzenden over het internet en andere computernetwerken. Het maakt deel uit van de netwerklaag van het TCP/IP-model en is verantwoordelijk voor het routeren van gegevenspakketten van de bron naar de bestemming.
 Wanneer gegevens worden verzonden vanaf een bronapparaat naar een bestemmingsapparaat via het internet, worden de gegevens opgesplitst in kleine pakketjes. Elk pakketje bevat een deel van de gegevens, samen met het IP-adres van de bron en het IP-adres van de bestemming. Het pakketje wordt vervolgens verzonden via het netwerk naar de bestemming.
 
-Het IP-protocol heeft twee belangrijke taken: adreszuivering en routering. # adreszuivering
-#### adreszuivering
-Adreszuivering is het proces van pakketjes maken, en het toevoegen van een IP-adres aan elk pakketje om het te identificeren en te verzenden naar de juiste bestemming. 
+Het IP-protocol heeft twee belangrijke taken: fragmenteren en routering.
+#### Fragmenteren
+Met fragmenteren bedoelen we het maken van pakketjes, en het toevoegen van het IP-adres van verzender en ontvanger aan elk pakketje om het te identificeren en te verzenden naar de juiste bestemming. 
 
 #### Routering
 Routering is het proces van het bepalen van de beste route voor het pakketje om de bestemming te bereiken, op basis van de beschikbare netwerkverbindingen en routers.
 
 
-#### best-effort principe
-Het IP-protocol maakt gebruik van het beste effort-principe, wat betekent dat het pakketje wordt verzonden zonder garantie van levering of kwaliteit van de verbinding. Het kan dus voorkomen dat pakketjes verloren gaan of vertraging oplopen in het netwerk. Dit wordt opgevangen door hogere lagen van het TCP/IP-model, zoals TCP (Transmission Control Protocol), die de betrouwbaarheid van de verbinding garanderen.
+#### Het best-effort principe
+Het IP-protocol maakt gebruik van het best effort-principe, wat betekent dat het pakketje wordt verzonden zonder garantie van levering of kwaliteit van de verbinding. Het kan dus voorkomen dat pakketjes verloren gaan of vertraging oplopen in het netwerk. Dit kan worden opgevangen door het gebruik van het hoger gelegen TCP (Transmission Control Protocol), die de betrouwbaarheid van de verbinding garanderen.
 
 Kortom, het IP-protocol is de basis van communicatie over het internet en andere computernetwerken. Het verzendt gegevenspakketjes van de bron naar de bestemming door middel van adreszuivering en routering. Het is een belangrijk onderdeel van het TCP/IP-model en wordt gebruikt in combinatie met andere protocollen om betrouwbare communicatie te garanderen.
 
@@ -34,19 +34,12 @@ Kortom, het IP-protocol is de basis van communicatie over het internet en andere
 ## Het TCP-protocol
 TCP (Transmission Control Protocol) is een protocol dat wordt gebruikt voor het verzenden en ontvangen van gegevens tussen computers over een netwerk. TCP maakt deel uit van de TCP/IP-protocolfamilie, die de basis vormt van het internet.
 
-TCP zorgt ervoor dat gegevens betrouwbaar worden afgeleverd door ervoor te zorgen dat elk gegevenspakketje dat wordt verzonden, wordt gecontroleerd op fouten en indien nodig opnieuw wordt verzonden. Dit gebeurt door middel van bevestigingen (ACKs) en sequentienummers die aan elke gegevensstroom worden toegewezen. Dit betekent dat als er onderweg een pakketje verloren gaat, het opnieuw wordt verzonden totdat het correct is ontvangen.
+### Het virtueel verbinden van applicaties
+TCP verbindt eigenlijk 2 applicaties (cliënt en server-applicatie) met elkaar. Deze bevinden zich normaal op een andere computer, op een ander netwerk.
 
-TCP is ook verantwoordelijk voor het controleren van de stroom van gegevens tussen computers. Dit betekent dat als een computer te veel gegevens in één keer probeert te verzenden, TCP de stroom van gegevens kan beperken om te voorkomen dat de ontvangende computer overbelast raakt.
+Voor het addresseren van de 2 applicaties hebben we dus 2 zaken nodig: het IP-adres, waarmee we de juiste computer adresseren, en een poortnummer, waarmee we de juiste applicatie adresseren. 
 
-Ten slotte maakt TCP ook gebruik van een driewegshandshake om een verbinding tussen twee computers tot stand te brengen voordat gegevens kunnen worden verzonden. Dit betekent dat beide computers moeten bevestigen dat ze klaar zijn om gegevens uit te wisselen voordat ze dat daadwerkelijk kunnen doen.
-
-Kortom, TCP is een belangrijk protocol voor het verzenden van gegevens over het internet, omdat het ervoor zorgt dat gegevens betrouwbaar worden afgeleverd en dat de stroom van gegevens wordt gecontroleerd om overbelasting te voorkomen.
-
-## TCP/IP
-TCP/IP is een set van communicatieprotocollen die worden gebruikt om computers met elkaar te laten communiceren over een netwerk. Het protocol bestaat uit twee delen: het Transmission Control Protocol (TCP) en het Internet Protocol (IP). TCP wordt gebruikt om ervoor te zorgen dat gegevens veilig en betrouwbaar worden verzonden tussen computers, terwijl IP ervoor zorgt dat de gegevens op de juiste bestemming terechtkomen.
-
-Om de communicatie tussen computers mogelijk te maken, worden er poorten gebruikt. Een poort is een nummer dat aan een specifieke applicatie wordt toegewezen, zodat de applicatie kan worden geïdentificeerd en gegevens kan verzenden en ontvangen via het netwerk.
-
+#### Poorten
 Er zijn twee soorten poorten: bekende poorten en dynamische poorten. Bekende poorten hebben een vast nummer en worden gebruikt door veelgebruikte applicaties zoals e-mail, webbrowsers en FTP-clients. Dynamische poorten zijn poorten die tijdelijk worden toegewezen aan applicaties wanneer ze worden gestart.
 
 Hier zijn enkele veelgebruikte poorten en hun functies:
@@ -56,6 +49,31 @@ Hier zijn enkele veelgebruikte poorten en hun functies:
 * Poort 25: SMTP (Simple Mail Transfer Protocol) - gebruikt voor het verzenden van e-mail
 * Poort 110: POP3 (Post Office Protocol version 3) - gebruikt voor het ophalen van e-mail
 * Poort 143: IMAP (Internet Message Access Protocol) - gebruikt voor het ophalen van e-mail op een server
+
+#### Algemene werking
+TCP houdt geen rekening met tussenliggende verbindingen, en werkt alsof 2 computers rechtstreeks met elkaar verbonden zijn. 
+* verbinding maken tussen 2 computers: Er wordt een verbinding gemaakt tussen 2 computers voor het verzenden van bepaalde informatie (drieweghandshake). Er wordt informatie uitgewisseld over de grootte van het pakketje, en de gewenste overdrachtsnelheid.
+* Segmenteren van gegevens: Deze informatie wordt in segmentjes verdeeld, en genummerd, zodat deze informatie bij de ontvanger opnieuw kan samengesteld worden, en naar de juiste poort kan doorgestuurd worden. 
+
+
+* Biedt een verzekerde gegevensoverdracht: TCP verstuurt elk segment met behulp van IP. Het IP is een best-effort protocol, en kan dus niet garanderen dat alle segmentjes toekomen. TCP controleert dus of elk (genummerd) segmentje toegekomen is. De ontvangende computer doet een foutcontrole op de pakketjes, stuurt voor elk ontvangen segment een berichtje (goed aangekomen of niet) naar de verzender. Als een pakketje na een bepaalde tijd niet toegekomen is, wordt er een verzoek verstuurd om opnieuw te versturen.
+
+
+
+
+
+### congestie-controle mechanisme
+
+Daarnaast is TCP ook verantwoordelijk voor het controleren van de stroom van gegevens tussen computers. Dit betekent dat als er op een bepaalde plaats op het net te veel gegevens in één keer passeren (er is congestie, of file), TCP de stroom van gegevens kan vertragen om te voorkomen dat de ontvangende computer overbelast raakt.
+
+Ten slotte maakt TCP ook gebruik van een driewegshandshake om een verbinding tussen twee computers tot stand te brengen voordat gegevens kunnen worden verzonden. Dit betekent dat beide computers moeten bevestigen dat ze klaar zijn om gegevens uit te wisselen voordat ze dat daadwerkelijk kunnen doen.
+
+Kortom, TCP is een belangrijk protocol voor het verzenden van gegevens over het internet, omdat het ervoor zorgt dat gegevens betrouwbaar worden afgeleverd en dat de stroom van gegevens wordt gecontroleerd om overbelasting te voorkomen.
+
+## TCP/IP
+TCP/IP is een set van communicatieprotocollen die worden gebruikt om computers met elkaar te laten communiceren over een netwerk. Het protocol bestaat uit twee delen: het Transmission Control Protocol (TCP) en het Internet Protocol (IP). TCP wordt gebruikt om ervoor te zorgen dat gegevens veilig en betrouwbaar worden verzonden tussen computers, terwijl IP ervoor zorgt dat de gegevens op de juiste bestemming terechtkomen.
+
+
 
 ### Werking
 Om pakketten te versturen en te ontvangen, is het belangrijk om het IP-adres van de bestemming te kennen. Een IP-adres is een uniek identificatienummer dat aan elke computer of apparaat is toegewezen dat is aangesloten op een netwerk. Het IP-adres vertelt het netwerk waar het pakket naartoe moet worden gestuurd. Het IP-adres is vergelijkbaar met het adres op een enveloppe waarmee je een brief naar de juiste persoon op het juiste adres stuurt.
