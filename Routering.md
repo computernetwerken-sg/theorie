@@ -12,6 +12,8 @@ Routing is het proces van het doorsturen van gegevens vanaf de bron naar de best
 
 ##	TCP / IP
 
+TCP/IP is een set van communicatieprotocollen die worden gebruikt om computers met elkaar te laten communiceren over een netwerk. Het protocol bestaat uit twee delen: het Transmission Control Protocol (TCP) en het Internet Protocol (IP). TCP wordt gebruikt om ervoor te zorgen dat gegevens veilig en betrouwbaar worden verzonden tussen computers, terwijl IP ervoor zorgt dat de gegevens op de juiste bestemming terechtkomen.
+
 ###	Het IP-protocol
 
 Het IP-protocol (Internet Protocol) is een netwerkprotocol dat wordt gebruikt om gegevens te verzenden over het internet en andere computernetwerken. Het maakt deel uit van de netwerklaag van het TCP/IP-model en is verantwoordelijk voor het routeren van gegevenspakketten van de bron naar de bestemming.
@@ -31,15 +33,15 @@ Het IP-protocol maakt gebruik van het best effort-principe, wat betekent dat het
 Kortom, het IP-protocol is de basis van communicatie over het internet en andere computernetwerken. Het verzendt gegevenspakketjes van de bron naar de bestemming door middel van adreszuivering en routering. Het is een belangrijk onderdeel van het TCP/IP-model en wordt gebruikt in combinatie met andere protocollen om betrouwbare communicatie te garanderen.
 
 
-## Het TCP-protocol
+### Het TCP-protocol
 TCP (Transmission Control Protocol) is een protocol dat wordt gebruikt voor het verzenden en ontvangen van gegevens tussen computers over een netwerk. TCP maakt deel uit van de TCP/IP-protocolfamilie, die de basis vormt van het internet.
 
-### Het virtueel verbinden van applicaties
+#### Het virtueel verbinden van applicaties
 TCP verbindt eigenlijk 2 applicaties (cliënt en server-applicatie) met elkaar. Deze bevinden zich normaal op een andere computer, op een ander netwerk.
 
 Voor het addresseren van de 2 applicaties hebben we dus 2 zaken nodig: het IP-adres, waarmee we de juiste computer adresseren, en een poortnummer, waarmee we de juiste applicatie adresseren. 
 
-#### Poorten
+##### Poorten
 Er zijn twee soorten poorten: bekende poorten en dynamische poorten. Bekende poorten hebben een vast nummer en worden gebruikt door veelgebruikte applicaties zoals e-mail, webbrowsers en FTP-clients. Dynamische poorten zijn poorten die tijdelijk worden toegewezen aan applicaties wanneer ze worden gestart.
 
 Hier zijn enkele veelgebruikte poorten en hun functies:
@@ -50,7 +52,7 @@ Hier zijn enkele veelgebruikte poorten en hun functies:
 * Poort 110: POP3 (Post Office Protocol version 3) - gebruikt voor het ophalen van e-mail
 * Poort 143: IMAP (Internet Message Access Protocol) - gebruikt voor het ophalen van e-mail op een server
 
-#### Algemene werking
+##### Algemene werking
 TCP houdt geen rekening met tussenliggende verbindingen, en werkt alsof 2 computers rechtstreeks met elkaar verbonden zijn. 
 * verbinding maken tussen 2 computers: Er wordt een verbinding gemaakt tussen 2 computers voor het verzenden van bepaalde informatie (drieweghandshake). Er wordt informatie uitgewisseld over de grootte van het pakketje, en de gewenste overdrachtsnelheid.
 * Segmenteren van gegevens: Deze informatie wordt in segmentjes verdeeld, en genummerd, zodat deze informatie bij de ontvanger opnieuw kan samengesteld worden, en naar de juiste poort kan doorgestuurd worden. 
@@ -62,7 +64,7 @@ TCP houdt geen rekening met tussenliggende verbindingen, en werkt alsof 2 comput
 
 
 
-### congestie-controle mechanisme
+##### congestie-controle mechanisme
 
 Daarnaast is TCP ook verantwoordelijk voor het controleren van de stroom van gegevens tussen computers. Dit betekent dat als er op een bepaalde plaats op het net te veel gegevens in één keer passeren (er is congestie, of file), TCP de stroom van gegevens kan vertragen om te voorkomen dat de ontvangende computer overbelast raakt.
 
@@ -70,27 +72,22 @@ Ten slotte maakt TCP ook gebruik van een driewegshandshake om een verbinding tus
 
 Kortom, TCP is een belangrijk protocol voor het verzenden van gegevens over het internet, omdat het ervoor zorgt dat gegevens betrouwbaar worden afgeleverd en dat de stroom van gegevens wordt gecontroleerd om overbelasting te voorkomen.
 
-## TCP/IP
-TCP/IP is een set van communicatieprotocollen die worden gebruikt om computers met elkaar te laten communiceren over een netwerk. Het protocol bestaat uit twee delen: het Transmission Control Protocol (TCP) en het Internet Protocol (IP). TCP wordt gebruikt om ervoor te zorgen dat gegevens veilig en betrouwbaar worden verzonden tussen computers, terwijl IP ervoor zorgt dat de gegevens op de juiste bestemming terechtkomen.
 
 
-
-### Werking
-Om pakketten te versturen en te ontvangen, is het belangrijk om het IP-adres van de bestemming te kennen. Een IP-adres is een uniek identificatienummer dat aan elke computer of apparaat is toegewezen dat is aangesloten op een netwerk. Het IP-adres vertelt het netwerk waar het pakket naartoe moet worden gestuurd. Het IP-adres is vergelijkbaar met het adres op een enveloppe waarmee je een brief naar de juiste persoon op het juiste adres stuurt.
-
-Naast het IP-adres is ook het poortnummer belangrijk om pakketten te versturen en te ontvangen. Een poortnummer is een nummer dat aan een specifieke toepassing is toegewezen, zodat gegevens van en naar die toepassing kunnen worden gestuurd. Een poortnummer is vergelijkbaar met de kamer- of afdelingsnummer op een adres, dat vertelt waar binnen een gebouw de brief moet worden afgeleverd.
-
-Wanneer een apparaat een pakket verzendt,UDP en TCP zijn beide protocollen die worden gebruikt voor de verzending van gegevens over een netwerk, maar er zijn belangrijke verschillen tussen de twee protocollen.
 
 
 ### UDP
 
-UDP is een variant van TCP, wordt ook gebruikt voor de verzending van gegevens over een netwerk, werkt net als TCP met poortnummers, en ook met het IP protocol. Er zijn echter enkele belangrijke verschillen:
+UDP is een variant van TCP, wordt ook gebruikt voor de verzending van gegevens over een netwerk, werkt net als TCP met poortnummers, en ook met het IP protocol. 
+We zouden dus eigenlijk kunnen spreken over UDP/TCP. Dit gebeurt niet, UDP heeft geen zo'n belangrijke invloed op het internet (congestiecontrole etc) als TCP
 
-Het belangrijkste verschil tussen UDP en TCP is dat UDP een verbindingsloos protocol is, terwijl TCP een verbindingsgeoriënteerd protocol is. Dit betekent dat UDP geen verbinding opzet tussen de zender en de ontvanger, terwijl TCP dat wel doet. Bij UDP worden gegevens gewoon verzonden naar de ontvanger zonder dat er een bevestiging wordt ontvangen. Dit maakt UDP snel, maar minder betrouwbaar, omdat er geen garantie is dat de gegevens aankomen en in de juiste volgorde worden ontvangen. UDP is daarom geschikt voor toepassingen waar snelheid belangrijker is dan betrouwbaarheid, zoals online gaming of streaming van video.
+##### Verbindingsloos protocol: onzekere gegevensoverdracht
+Het belangrijkste verschil tussen UDP en TCP is dat UDP een verbindingsloos protocol is, terwijl TCP een verbindingsgeoriënteerd protocol is. Dit betekent dat UDP geen verbinding opzet tussen de zender en de ontvanger, terwijl TCP dat wel doet. Bij UDP worden gegevens gewoon verzonden naar de ontvanger zonder dat er een bevestiging wordt ontvangen. 
+Dit maakt UDP snel, maar minder betrouwbaar, omdat er geen garantie is dat de gegevens aankomen en in de juiste volgorde worden ontvangen. UDP is daarom geschikt voor toepassingen waar snelheid belangrijker is dan betrouwbaarheid, zoals online gaming of streaming van video.
 
 TCP, aan de andere kant, zorgt voor een betrouwbare verbinding tussen de zender en de ontvanger. Wanneer gegevens worden verzonden via TCP, wordt er een verbinding opgezet tussen de zender en de ontvanger voordat de gegevens worden verzonden. Dit betekent dat er een bevestiging wordt ontvangen dat de gegevens zijn aangekomen en in de juiste volgorde zijn ontvangen. TCP is daarom geschikt voor toepassingen waar betrouwbaarheid belangrijker is dan snelheid, zoals het downloaden van bestanden of het versturen van e-mails.
 
+##### Sneller als TCP
 Een ander verschil tussen UDP en TCP is dat TCP meer overhead heeft dan UDP. Dit komt doordat TCP meer gegevens gebruikt om de verbinding op te zetten en te onderhouden. Hierdoor is TCP langzamer dan UDP en is het minder geschikt voor toepassingen waar snelheid van belang is.
 
 Kortom, UDP en TCP zijn beide protocollen voor de verzending van gegevens over een netwerk, maar ze verschillen in snelheid, betrouwbaarheid en overhead. UDP is snel, maar minder betrouwbaar, terwijl TCP betrouwbaar is, maar minder snel en heeft meer overhead. De keuze tussen UDP en TCP hangt af van de specifieke toepassing en de prioriteit van snelheid versus betrouwbaarheid.
@@ -98,7 +95,7 @@ Kortom, UDP en TCP zijn beide protocollen voor de verzending van gegevens over e
 
 Hieronder staan enkele voorbeelden van TCP- en UDP-toepassingen:
 
-#### TCP:
+###### TCP:
 
 * HTTP (Hypertext Transfer Protocol): wordt gebruikt voor het verzenden van webpagina's via internet
 * FTP (File Transfer Protocol): wordt gebruikt voor het verzenden van bestanden over internet
@@ -106,7 +103,7 @@ Hieronder staan enkele voorbeelden van TCP- en UDP-toepassingen:
 * SSH (Secure Shell): wordt gebruikt voor beveiligde toegang tot een server
 * Telnet: wordt gebruikt voor op afstand inloggen op een server
 
-#### UDP:
+###### UDP:
 
 * DNS (Domain Name System): wordt gebruikt voor het vertalen van domeinnamen naar IP-adressen
 * DHCP (Dynamic Host Configuration Protocol): wordt gebruikt voor het toewijzen van IP-adressen aan apparaten in een netwerk
@@ -117,25 +114,28 @@ Hieronder staan enkele voorbeelden van TCP- en UDP-toepassingen:
 Dit zijn slechts enkele voorbeelden van de vele toepassingen van TCP en UDP. Welk protocol het meest geschikt is, hangt af van de specifieke toepassing en de prioriteit van snelheid versus betrouwbaarheid.
 
 
-##	Mac-adressen en ARP
+##	De verbindingslaag
 
-De verbindingslaag, ook wel bekend als de data link laag, is de laag in het netwerkprotocolmodel die verantwoordelijk is voor het overbrengen van gegevens tussen aangrenzende netwerken, zoals tussen een computer en een switch op een Ethernet-netwerk.
+### Mac-adressen
 
-De verbindingslaag gebruikt MAC-adressen (Media Access Control-adressen) om netwerkapparaten te identificeren en te communiceren. Elk netwerkapparaat heeft een uniek MAC-adres dat is ingebakken in de netwerkadapter van het apparaat.
+De verbindingslaag, ook wel bekend als de data link laag, is de laag in het netwerkprotocolmodel die verantwoordelijk is voor het overbrengen van gegevens tussen toestellen op hetzelfde netwerk, zoals tussen een computer en een switch op een Ethernet-netwerk.
 
-Waarom gebruikt de verbindingslaag MAC-adressen in plaats van IP-adressen?
-MAC-adressen zijn gegarandeerd uniek en worden toegewezen aan netwerkapparaten door hun fabrikanten. Hierdoor is het gemakkelijk om een uniek apparaat te identificeren op het netwerk, zelfs als het IP-adres van het apparaat verandert.
+De verbindingslaag gebruikt MAC-adressen (Media Access Control-adressen) om netwerkapparaten te identificeren en te communiceren. Elk netwerkapparaat heeft een uniek MAC-adres dat is ingebakken in de netwerkadapter van het apparaat. Netwerkapparaten communiceren dus met elkaar via hun MAC-adres.
 
-ARP staat voor Address Resolution Protocol. Het is een protocol dat wordt gebruikt in computernetwerken om een IP-adres te koppelen aan het fysieke MAC-adres van een apparaat.
+### ARP
+
+ARP staat voor Address Resolution Protocol. Het is een protocol dat wordt gebruikt in computernetwerken om een IP-adres te koppelen aan het fysieke MAC-adres van een apparaat. 
 Wanneer een apparaat op het netwerk gegevens wil verzenden naar een ander apparaat, moet het het MAC-adres van de ontvanger kennen om de gegevens naar het juiste apparaat te kunnen verzenden. ARP wordt gebruikt om dit te bereiken.
 
 Het ARP-protocol werkt als volgt:
-Het apparaat dat gegevens wil verzenden (de zender) zoekt in de ARP-cache (een tijdelijke opslag van recent gebruikte MAC-adressen) om te zien of het MAC-adres van de ontvanger al bekend is.
-Als het MAC-adres niet bekend is, stuurt de zender een ARP-verzoek naar het netwerk waarin het IP-adres van de ontvanger wordt vermeld.
-Het apparaat met het bijbehorende IP-adres ontvangt het ARP-verzoek en stuurt een ARP-reactie terug met het bijbehorende MAC-adres.
-De zender ontvangt het ARP-antwoord en kan nu de gegevens verzenden naar de juiste bestemming.
-ARP is een belangrijk protocol voor het verzenden van gegevens over het netwerk. Zonder ARP zou het verzenden van gegevens veel langzamer en inefficiënter zijn, omdat de zender handmatig het MAC-adres van de ontvanger zou moeten achterhalen voordat gegevens kunnen worden verzonden.
+* Het apparaat dat gegevens wil verzenden (de zender) zoekt in de ARP-cache (een tijdelijke opslag van recent gebruikte MAC-adressen) om te zien of het MAC-adres van de ontvanger al bekend is.
 je kan de arp-cache opvragen op je computer op de CLI met het commando "arp -a"
+* Als het MAC-adres niet bekend is, stuurt de zender een ARP-verzoek naar het netwerk waarin het IP-adres van de ontvanger wordt vermeld.
+* Het apparaat met het bijbehorende IP-adres ontvangt het ARP-verzoek en stuurt een ARP-reactie terug met het bijbehorende MAC-adres.
+* De zender ontvangt het ARP-antwoord en kan nu de gegevens verzenden naar de juiste bestemming.
+
+ARP is een belangrijk protocol voor het verzenden van gegevens over het netwerk. 
+
 
 ### Het DHCP protocol
 
@@ -146,7 +146,7 @@ DHCP staat voor Dynamic Host Configuration Protocol en is een netwerkprotocol da
 Dit proces gebeurt automatisch en dynamisch, wat betekent dat een apparaat een nieuw IP-adres kan krijgen elke keer dat het opnieuw verbinding maakt met het netwerk.
 DHCP bespaart tijd en maakt netwerkbeheer efficiënter door het handmatig toewijzen van IP-adressen en andere netwerkconfiguraties te vervangen.
 
-### Beschrijf de werking van DNS.
+### Het DNS protocol
 
 DNS staat voor Domain Name System en is een netwerkprotocol dat wordt gebruikt om hostnamen (zoals www.example.com) om te zetten in IP-adressen (zoals 192.0.2.1) die computers begrijpen. Hieronder vindt u enkele belangrijke punten om te begrijpen over de werking van DNS:
 * Wanneer u een website wilt bezoeken, typt u de hostnaam in de webbrowser (zoals www.example.com).
@@ -154,4 +154,3 @@ DNS staat voor Domain Name System en is een netwerkprotocol dat wordt gebruikt o
 *	De DNS-server zoekt het IP-adres op in zijn database en stuurt het terug naar de webbrowser.
 *	De webbrowser gebruikt het IP-adres om verbinding te maken met de webserver waarop de website wordt gehost.
 *	Dit hele proces gebeurt achter de schermen en is voor de meeste gebruikers onzichtbaar.
-*
