@@ -7,4 +7,4 @@
   - [transportlaag](2b_transportlaag.md)
   - [netwerklaag ](2c_netwerklaag.md)
   - [verbindingslaag](2d_verbindingslaag.md)
-  - [fysieke laag](2e_verbindingslaag.md)
+  - [fysieke laag](2e_fysiekelaag.md)
