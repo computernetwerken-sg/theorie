@@ -19,23 +19,23 @@ Een server is normaal altijd aan: deze dienst mag nooit onderbroken worden.
 
 #### Gangbare servertypen
  
-•	Bestandsserver
-•	Applicatieserver
-•	Webserver
-•	Mailserver
-•	Databaseserver
-•	Time-server
-•	Printerserver
-•	FTP-server
-•	DHCP-server
-•	DNS-server
-•	Proxyserver
-•	IRC-server
-•	Gameserver
-•	Virtual private server
-•	Telnet-server
-•	Opensource-server
-•	Media streaming server
+* Bestandsserver
+*	Applicatieserver
+*	Webserver
+*	Mailserver
+*	Databaseserver
+*	Time-server
+*	Printerserver
+*	FTP-server
+*	DHCP-server
+*	DNS-server
+*	Proxyserver
+*	IRC-server
+*	Gameserver
+*	Virtual private server
+*	Telnet-server
+*	Opensource-server
+*	Media streaming server
  
 #### Besturingssystemen
 Servers zijn nogal technisch, en worden beheerd door specialisten. De meest gebruikte besturingssystemen zijn Windows server, Linux (open source) en Unix.
