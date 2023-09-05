@@ -48,4 +48,7 @@ Doorgaans bestaat een clientprogramma onder andere uit een gebruikersinterface, 
 De Client applicatie is vaak het front-end development onderdeel van een applicatie. De front-end ontwikkeling is het programmeren van de “voorkant” van de applicatie. De voorkant is datgene wat zichtbaar is voor de bezoeker van bijvoorbeeld een website: de afbeeldingen, de layout, het lettertypen, kortom het dashboard van de gebruiker.
 
 
+Einde
+
+
 
